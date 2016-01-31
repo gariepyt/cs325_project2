@@ -14,7 +14,3 @@ The output from each file will be written to the file
 
 We have also included the spreadsheet containing our results data:
 _______
-
-As well as our Project 2 Report
-
-project2.pdf
