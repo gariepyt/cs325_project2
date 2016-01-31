@@ -52,8 +52,12 @@ def main():
 
 					curTotal = int(inData[inTot])			#amount desired
 
+					t0 = time.time()
 					retArr, retCount = chGreedy(curArray, curTotal)	#calling our function
+					t1 = time.time()
+					totalTime = t1-t0
 
+					print("Time elapsed: " + totalTime)
 					print("Coin count: " + str(retArr))
 					print("Minimal coins: " + str(retCount))
 
