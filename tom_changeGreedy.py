@@ -20,6 +20,17 @@ def chGreedy(array, total):
 
 	return countArr, totCount
 
+def prob4():
+	V = [1, 5, 10, 25, 50]
+	A = 2010
+	while (A <= 2200):
+		startTime = time.clock()
+		resArr, resCount = chGreedy(V, A)
+		endTime = time.clock()
+		totTime = endTime - startTime
+		print("A: " + str(A))
+		print("Time: " + str(totTime))
+		A = A + 5
 
 def main():
 
@@ -67,4 +78,6 @@ def main():
 		print("ERROR: incorrect amount of arguments")
 
 
-main()
+# main()
+
+prob4()
