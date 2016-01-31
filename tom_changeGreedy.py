@@ -8,18 +8,15 @@ def chGreedy(array, total):
 	i = len(array) - 1
 	curTotal = total
 	countArr =  [0] * len(array)
+	totCount = 0
 
 	while (curTotal > 0):
 		if (array[i] <= curTotal):
 			curTotal = curTotal - array[i]
 			countArr[i] = countArr[i] + 1
+			totCount = totCount + 1
 		else:
 			i = i - 1
-
-	totCount = 0
-
-	for x in range(0, len(countArr)):
-		totCount = totCount + countArr[x]
 
 	return countArr, totCount
 
