@@ -132,8 +132,13 @@ def main():
                     denomArray = line1
                     changeValue = line2
 
+					t0 = time.time()
                     # Run the Dynamic Programming Algorithm for Coin Change Problem
                     minCoinCount, minCoinsUsed = changedp(denomArray, changeValue)
+					t1 = time.time()
+					totalTime = t1-t0
+
+					print("Time elapsed: " + totalTime)
 
                     # With returned results, write to output file, '[input_filename]change.txt
                     resultFile.write(str(minCoinsUsed) + "\n")
