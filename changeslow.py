@@ -52,8 +52,13 @@ def main():
 
 					curTotal = int(inData[inTot])			#amount desired to be optimized
 
-					retArr, retCount = chSlow(curArray, curTotal)
 
+					t0 = time.time()
+					retArr, retCount = chSlow(curArray, curTotal)
+					t1 = time.time()
+					totalTime = t1-t0
+
+					print("Time elapsed: " + totalTime)
 					print("Coin count: " + str(retArr))
 					print("Minimal coins: " + str(retCount))
 
