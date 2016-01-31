@@ -31,6 +31,7 @@ def prob4():
 		totTime = endTime - startTime
 		print("A: " + str(A))
 		print("Time: " + str(totTime))
+		print("Answer: " + str(resCount))
 		A = A + 5
 
 def main():
