@@ -9,12 +9,12 @@ def chSlow(array, total):
 	minArr = [0] * len(array)
 
 	for i in range(0, len(array)):
-		if (array[i] <= total):
-			resArr, resCoins = chSlow(array, total - array[i])
-			resCoins = resCoins + 1
-			resArr[i] = resArr[i] + 1
+		if (array[i] <= total):						#if the coin can be successfully be subrtracted from total amount
+			resArr, resCoins = chSlow(array, total - array[i])	#subtracting that coin
+			resCoins = resCoins + 1					#adding to the count of total coins
+			resArr[i] = resArr[i] + 1				#adding to the count of said coin				
 
-			if resCoins < minCoins:
+			if resCoins < minCoins:					#if our combination is optimized update our table
 				minCoins = resCoins
 				minArr = resArr
 
@@ -42,15 +42,15 @@ def main():
 				inArr = 0
 				inTot = 1
 
-				while (inArr < len(inData)):
+				while (inArr < len(inData)):				#reading our input file
 					curArray = inData[inArr]
 
-					curArray = curArray.replace('[', '')
+					curArray = curArray.replace('[', '')		#Reading through the extras
 					curArray = curArray.replace(']', '')
 
-					curArray = map(int, curArray.split(','))
+					curArray = map(int, curArray.split(','))	#the array containing our coin values
 
-					curTotal = int(inData[inTot])
+					curTotal = int(inData[inTot])			#amount desired to be optimized
 
 					retArr, retCount = chSlow(curArray, curTotal)
 
