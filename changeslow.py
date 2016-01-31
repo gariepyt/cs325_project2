@@ -7,10 +7,6 @@ import os
 def chSlow(array, total):
 	minCoins = total
 	minArr = [0] * len(array)
-	for x in range(0, len(array)):
-		if (array[x] == total):
-			minArr[x] = minArr[x] + 1
-			return minArr, 1
 
 	for i in range(0, len(array)):
 		if (array[i] <= total):
