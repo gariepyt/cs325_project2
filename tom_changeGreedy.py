@@ -21,18 +21,75 @@ def chGreedy(array, total):
 
 	return countArr, totCount
 
+def prob6():
+	V = [1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+	A = 2000
+	outName = "greedyResults_prob6.csv"
+	with open(outName, 'wt') as resultFile:
+		resultFile.write("A,Greedy (Time),Greedy (coin)\n")
+	
+		while (A <= 2200):
+			startTime = time.clock()
+			resArr, resCount = chGreedy(V, A)
+			endTime = time.clock()
+			totTime = endTime - startTime
+			print("A: " + str(A))
+			print("Time: " + str(totTime))
+			print("Answer: " + str(resCount))
+
+			resultFile.write(str(A) + "," + str(totTime) + "," + str(resCount) + "\n")
+
+			A = A + 1
+
+def prob5():
+	V1 = [1, 2, 6, 12, 24, 48, 60]
+	V2 = [1, 6, 13, 37, 150]
+	A = 2000
+	outName = "greedyResults_prob5.csv"
+	with open(outName, 'wt') as resultFile:
+		resultFile.write("A,Greedy (A1 Time),Greedy (A1 coin),Greedy (A2 Time),Greedy (A2 coin)\n")
+		while (A <= 2200):
+			# Getting A1 answers
+			startTime1 = time.clock()
+			resArr1, resCount1 = chGreedy(V1, A)
+			endTime1 = time.clock()
+			totTime1 = endTime1 - startTime1
+
+			# Getting A2 answers
+			startTime2 = time.clock()
+			resArr2, resCount2 = chGreedy(V2, A)
+			endTime2 = time.clock()
+			totTime2 = endTime2 - startTime2
+
+			print("A: " + str(A))
+			print("Time1: " + str(totTime1))
+			print("Answer1: " + str(resCount1))
+			print("Time2: " + str(totTime2))
+			print("Answer2: " + str(resCount2))
+
+			resultFile.write(str(A) + "," + str(totTime1) + "," + str(resCount1) + "," + str(totTime2) + "," + str(resCount2) + "\n")
+			
+			A = A + 1
+
 def prob4():
 	V = [1, 5, 10, 25, 50]
 	A = 2010
-	while (A <= 2200):
-		startTime = time.clock()
-		resArr, resCount = chGreedy(V, A)
-		endTime = time.clock()
-		totTime = endTime - startTime
-		print("A: " + str(A))
-		print("Time: " + str(totTime))
-		print("Answer: " + str(resCount))
-		A = A + 5
+	outName = "greedyResults_prob4.csv"
+	with open(outName, 'wt') as resultFile:
+		resultFile.write("A,Greedy (Time),Greedy (coin)\n")
+	
+		while (A <= 2200):
+			startTime = time.clock()
+			resArr, resCount = chGreedy(V, A)
+			endTime = time.clock()
+			totTime = endTime - startTime
+			print("A: " + str(A))
+			print("Time: " + str(totTime))
+			print("Answer: " + str(resCount))
+
+			resultFile.write(str(A) + "," + str(totTime) + "," + str(resCount) + "\n")
+
+			A = A + 5
 
 def main():
 
@@ -86,4 +143,8 @@ def main():
 
 # main()
 
-prob4()
+# prob4()
+
+# prob5()
+
+# prob6()
