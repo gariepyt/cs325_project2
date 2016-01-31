@@ -7,29 +7,29 @@ import os
 def chGreedy(array, total):
 	i = len(array) - 1
 	curTotal = total
-	countArr =  [0] * len(array)
+	countArr =  [0] * len(array)				#empty array for coin count
 	totCount = 0
 
-	while (curTotal > 0):
-		if (array[i] <= curTotal):
-			curTotal = curTotal - array[i]
-			countArr[i] = countArr[i] + 1
-			totCount = totCount + 1
+	while (curTotal > 0):					#while our total is positive
+		if (array[i] <= curTotal):			#if the largest coin value can be subtracted from our total
+			curTotal = curTotal - array[i]		#subtracting the coin
+			countArr[i] = countArr[i] + 1		#updating our count array of coins
+			totCount = totCount + 1			#updating our total count of coins
 		else:
-			i = i - 1
+			i = i - 1				#moving to the next coin in the coin array
 
 	return countArr, totCount
 
 
 def main():
 
-	if (len(sys.argv) == 2):
+	if (len(sys.argv) == 2):				#file i/o stuff checking for file	
 		fName = sys.argv[1]
 		inName = fName + ".txt"
 		outName = fName + "change.txt"
 
 		fileCheck = os.path.isfile(inName)
-		if (fileCheck == False):
+		if (fileCheck == False):		
 			print("ERROR: " + inName + " not found.")
 			return 1		
 
@@ -42,17 +42,17 @@ def main():
 				inArr = 0
 				inTot = 1
 
-				while (inArr < len(inData)):
+				while (inArr < len(inData)):			#Reading the file
 					curArray = inData[inArr]
 
-					curArray = curArray.replace('[', '')
+					curArray = curArray.replace('[', '')	#getting rid of extra stuff
 					curArray = curArray.replace(']', '')
 
-					curArray = map(int, curArray.split(','))
+					curArray = map(int, curArray.split(','))	#reading in the array , deleminated
 
-					curTotal = int(inData[inTot])
+					curTotal = int(inData[inTot])			#amount desired
 
-					retArr, retCount = chGreedy(curArray, curTotal)
+					retArr, retCount = chGreedy(curArray, curTotal)	#calling our function
 
 					print("Coin count: " + str(retArr))
 					print("Minimal coins: " + str(retCount))
