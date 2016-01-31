@@ -3,6 +3,7 @@
 
 import sys
 import os
+import time
 
 def chGreedy(array, total):
 	i = len(array) - 1
