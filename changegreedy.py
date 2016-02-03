@@ -136,7 +136,7 @@ def main():
 					t1 = time.time()
 					totalTime = t1-t0
 
-					print("Time elapsed: " + totalTime)
+					print("Time elapsed: " , totalTime)
 					print("Coin count: " + str(retArr))
 					print("Minimal coins: " + str(retCount))
 
