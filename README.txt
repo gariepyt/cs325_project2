@@ -5,7 +5,7 @@ Tom Gariepy, Jeffrey Schachtsick, Benjamin Frishman
 Files included:
 changeslow.py
 changegreedy.py
-coinChangeDP_vers3.py
+changedp.py
 
 Type "python changeslow.py [filename without .txt]" to run the slow algorithm
 
