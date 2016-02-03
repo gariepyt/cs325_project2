@@ -15,6 +15,4 @@ Type "python coinChangeDP_vers3.py [filename without .txt]" to run the dp algori
 
 The results will be output to the filename.txt file
 The output from each file will be written to the file
-
-We have also included the spreadsheet containing our results data:
 _______
